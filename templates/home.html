@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+h1 {
+    position: fixed; /* This will position the h1 at the top of the page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-decoration: underline; /* This will underline the h1 text */
+
+    /* This is a simple animation that changes the color of the h1 text over 3 seconds */
+    animation: colorchange 3s infinite;
+}
+
+/* Define the animation */
+@keyframes colorchange {
+    0%   {color: black;}
+    50%  {color: blue;}
+    100% {color: black;}
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1>Using MongoDB</h1>
+<br><br>
+<h2>Login</h2>
+
+<form action="/" method="POST">
+  <label for="username">Username:</label>
+  <input type="text" id="name" name="name" required>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required>
+  <input type="submit" value="Login">
+</form> 
+<a href="/record">INDEX</a>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 50%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #007BFF;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+button {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.update-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.remove-button {
+  background-color: #f44336;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h2>User Data</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Password</th>
+    <th>Delete</th>
+  </tr>
+
+  {% for item in data %}
+  <tr>
+    <td>{{ item['name'] }}</td>
+    <td>{{ item['password'] }}</td>
+      <td>
+      <form action="/delete" method="post">
+        <input type="hidden" name="_id" value="{{ item['_id'] }}">
+        <button type="submit" class="remove-button">Remove</button>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="/">home</a>
+</body>
+</html>
